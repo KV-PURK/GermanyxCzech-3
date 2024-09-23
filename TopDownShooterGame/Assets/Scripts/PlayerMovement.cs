@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    Vector2 inputDirection;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,9 +20,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Vector2 movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        movementDirection *= movementSpeed * 5.0f;
+        inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+    }
 
-        rb.MovePosition(rb.position + movementDirection * Time.deltaTime);
+    private void FixedUpdate()
+    {
+        Vector2 movementDirection = inputDirection * movementSpeed;
+        rb.MovePosition(rb.position + movementDirection * Time.fixedDeltaTime);
     }
 }
