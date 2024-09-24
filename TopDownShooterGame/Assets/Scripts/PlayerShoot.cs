@@ -18,7 +18,7 @@ public class PlayerShoot : MonoBehaviour
     {
         sinceShot += Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             Shoot();
         }
@@ -29,7 +29,10 @@ public class PlayerShoot : MonoBehaviour
         if (sinceShot < shootDelay) return;
 
 
-        Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation).GetComponent<Bullet>();
+        Bullet bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation).GetComponent<Bullet>();
+        bullet.maxBounces = PlayerStats.Singleton.bulletBounces;
+        bullet.damage = PlayerStats.Singleton.bulletDamage;
+
 
         sinceShot = 0.0f;
     }

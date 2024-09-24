@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class PlayerStats : MonoBehaviour
 {
-    private static UIManager _singleton;
+    private static PlayerStats _singleton;
 
-
-    public static UIManager Singleton
+    public static PlayerStats Singleton
     {
         get => _singleton;
 
@@ -17,7 +15,8 @@ public class UIManager : MonoBehaviour
             if (_singleton == null)
             {
                 _singleton = value;
-            }else
+            }
+            else
             {
                 Debug.LogWarning($"{nameof(UIManager)} Instance already exists, destroying duplicate");
                 Destroy(value);
@@ -25,20 +24,13 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    [SerializeField] private Slider healthSlider;
+    public int bulletDamage = 10;
+    public int bulletBounces = 2;
+    public float movementSpeed = 10.0f;
+    public float shootDelay = 0.75f;
 
     private void Awake()
     {
         Singleton = this;
-    }
-
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
-    public void OnPlayerDamaged(int amount, int curHealth, int maxHealth)
-    {
-        healthSlider.value = (float)curHealth / maxHealth;
     }
 }

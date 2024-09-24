@@ -5,9 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement Settings")]
-    [SerializeField] private float movementSpeed = 5.0f;
-
     private Rigidbody2D rb;
 
     Vector2 inputDirection;
@@ -25,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 movementDirection = inputDirection * movementSpeed;
+        Vector2 movementDirection = inputDirection * PlayerStats.Singleton.movementSpeed;
         rb.MovePosition(rb.position + movementDirection * Time.fixedDeltaTime);
     }
 }
