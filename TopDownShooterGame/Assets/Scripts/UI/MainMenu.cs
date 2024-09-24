@@ -11,4 +11,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(1);  // Name der Szene, die geladen werden soll
     }
+
+    // Diese Methode wird aufgerufen, wenn der Quit-Button gedrückt wird
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
