@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -30,6 +32,28 @@ public class PauseManager : MonoBehaviour
     {
         IsPaused = false;
         Singleton = this;
+    }
+
+    private void Start()
+    {
+        SceneManager.sceneUnloaded += OnSceneUnload;
+    }
+
+    private void OnSceneUnload(UnityEngine.SceneManagement.Scene current)
+    {
+        if (IsPaused)
+        {
+            ToggleGamePause();
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !IsPaused)
+        {
+            ToggleGamePause();
+            UIManager.Singleton.ShowPauseMenu();
+        }
     }
 
     public void ToggleGamePause()

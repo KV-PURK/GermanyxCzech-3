@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -29,6 +30,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject upgradeUIPrefab;
     [SerializeField] private Transform upgradeSelectUI;
     [SerializeField] private Transform upgradesHolder;
+
+    [Header("Pause Menu")]
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject pauseOverlay;
 
     private void Awake()
     {
@@ -61,5 +66,26 @@ public class UIManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+    }
+
+    public void ShowPauseMenu()
+    {
+        pauseMenu.SetActive(true);
+        pauseOverlay.SetActive(true);
+    }
+    public void HidePauseMenu()
+    {
+        pauseMenu.SetActive(false);
+        pauseOverlay.SetActive(false);
+    }
+
+    public void OnBackToMainMenuPress()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void OnExitToDesktopPress()
+    {
+        Application.Quit();
     }
 }
