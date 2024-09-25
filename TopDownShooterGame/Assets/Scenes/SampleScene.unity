@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 186225783}
   - component: {fileID: 186225782}
   - component: {fileID: 186225784}
+  - component: {fileID: 186225785}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -480,6 +481,19 @@ MonoBehaviour:
     m_FrequencyGain: 1
     m_Duration: 1
     m_NoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!114 &186225785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186225781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2722b81fa10f50f469caa4c318618285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 186225782}
 --- !u!1 &273701058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,6 +1840,7 @@ GameObject:
   - component: {fileID: 933911349}
   - component: {fileID: 933911350}
   - component: {fileID: 933911351}
+  - component: {fileID: 933911352}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1916,6 +1931,23 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!114 &933911352
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933911345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 493.80157, y: 946.9779, z: -290.3572}
 --- !u!1 &974972146
 GameObject:
   m_ObjectHideFlags: 0

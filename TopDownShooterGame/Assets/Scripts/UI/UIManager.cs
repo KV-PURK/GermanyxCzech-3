@@ -46,10 +46,13 @@ public class UIManager : MonoBehaviour
     public void OnPlayerDamaged(int amount, int curHealth, int maxHealth)
     {
         healthSlider.value = (float)curHealth / maxHealth;
+
+        CameraShake.Singleton.ShakeCamera(0.2f, 3.0f);
     }
 
     public void OnPlayerDeath()
     {
+        CameraShake.Singleton.ShakeCamera(0.5f, 5.0f);
         StartCoroutine(ShowGameOverUI(4.0f));
     }
 
