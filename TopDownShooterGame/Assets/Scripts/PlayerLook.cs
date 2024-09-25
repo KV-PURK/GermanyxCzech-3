@@ -9,6 +9,8 @@ public class PlayerLook : MonoBehaviour
 
     void Update()
     {
+        if (PauseManager.Singleton.IsPaused) return;
+
         Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - rotateTarget.position;
         float angle = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg + offset;
 

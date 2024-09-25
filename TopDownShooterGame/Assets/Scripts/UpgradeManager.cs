@@ -34,12 +34,12 @@ public class UpgradeManager : MonoBehaviour
 
     private void Start()
     {
-        TriggerUpgradeSelection();
+
     }
 
-    public void TriggerUpgradeSelection()
+    public void TriggerUpgradeSelection(int upgradeCount)
     {
-        List<PlayerUpgrade> randomUpgrades = GetRandomUpgrades(3);
+        List<PlayerUpgrade> randomUpgrades = GetRandomUpgrades(upgradeCount);
 
         foreach (PlayerUpgrade upgrade in randomUpgrades)
         {
@@ -48,17 +48,25 @@ public class UpgradeManager : MonoBehaviour
 
         UIManager.Singleton.ShowUpgradeSelectUI();
 
-        Time.timeScale = 0.01f;
+        if (!PauseManager.Singleton.IsPaused)
+        {
+            PauseManager.Singleton.ToggleGamePause();
+        }
     }
 
     public void EndUpgradeSelection()
     {
-        Time.timeScale = 1.0f;
+        if (PauseManager.Singleton.IsPaused)
+        {
+            PauseManager.Singleton.ToggleGamePause();
+        }
         UIManager.Singleton.HideUpgradeSelectUI();
     }
 
     private List<PlayerUpgrade> GetRandomUpgrades(int amount)
     {
+        if (amount > upgrades.Count) amount = upgrades.Count; // So we don't accidentally end up in an infinte loop
+
         List<PlayerUpgrade> randoms = new List<PlayerUpgrade>();
         for (int i = 0; i < amount; i++)
         {

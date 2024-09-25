@@ -18,7 +18,7 @@ public class PlayerShoot : MonoBehaviour
     {
         sinceShot += Time.deltaTime;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !PauseManager.Singleton.IsPaused)
         {
             Shoot();
         }

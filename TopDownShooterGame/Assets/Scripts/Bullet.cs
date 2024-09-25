@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour
     public float speed = 5.0f;
     public int damage = 15;
     public float maxBounces = 2;
-    [SerializeField] private float maxBulletTime = 10.0f;
 
     private Rigidbody2D rb;
     private int bounces;
@@ -17,8 +16,6 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        Destroy(gameObject, maxBulletTime);
     }
 
     private void FixedUpdate()

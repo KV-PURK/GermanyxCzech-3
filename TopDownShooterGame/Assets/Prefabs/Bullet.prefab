@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3318175191491281775}
   - component: {fileID: 6871114035566735839}
   - component: {fileID: 5753160730963699418}
+  - component: {fileID: 3616020118762045119}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -130,7 +131,6 @@ MonoBehaviour:
   speed: 20
   damage: 15
   maxBounces: 2
-  maxBulletTime: 10
 --- !u!58 &5753160730963699418
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -166,3 +166,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &3616020118762045119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7233020705380523305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be54d7b7a7aefac4490db637c4a3c8d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 10
