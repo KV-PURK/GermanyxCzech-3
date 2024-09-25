@@ -38,6 +38,7 @@ public class ShootingState : BaseEnemyState
 
     public override void OnUpdate()
     {
+        if (player == null) return;
         stateMachine.LookAtPlayer();
 
         sinceShot += Time.deltaTime;

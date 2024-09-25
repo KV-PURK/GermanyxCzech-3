@@ -35,6 +35,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject pauseOverlay;
 
+    [Header("Game Over")]
+    [SerializeField] private GameObject gameOverMenu;
+
     private void Awake()
     {
         Singleton = this;
@@ -43,6 +46,19 @@ public class UIManager : MonoBehaviour
     public void OnPlayerDamaged(int amount, int curHealth, int maxHealth)
     {
         healthSlider.value = (float)curHealth / maxHealth;
+    }
+
+    public void OnPlayerDeath()
+    {
+        StartCoroutine(ShowGameOverUI(4.0f));
+    }
+
+    IEnumerator ShowGameOverUI(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (!PauseManager.Singleton.IsPaused)
+            PauseManager.Singleton.ToggleGamePause();
+        gameOverMenu.SetActive(true);
     }
 
     public void SpawnUpgradeUI(PlayerUpgrade playerUpgrade)
@@ -87,5 +103,10 @@ public class UIManager : MonoBehaviour
     public void OnExitToDesktopPress()
     {
         Application.Quit();
+    }
+
+    public void OnPlayAgainClick()
+    {
+        SceneManager.LoadScene(1);
     }
 }

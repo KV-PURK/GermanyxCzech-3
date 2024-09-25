@@ -25,6 +25,7 @@ public class PlayerFollowState : BaseEnemyState
     public override void OnFixedUpdate()
     {
         rb.velocity = Vector2.zero;
+        if (player == null) return;
 
         if (Vector2.Distance(stateMachine.transform.position, player.position) < 7.0f)
         {
@@ -33,7 +34,7 @@ public class PlayerFollowState : BaseEnemyState
         }
 
         Vector2 forward = stateMachine.transform.up;
-        rb.MovePosition(rb.position + forward * 7.0f * Time.deltaTime);
+        rb.MovePosition(rb.position + 7.0f * Time.deltaTime * forward);
     }
 
     public override void OnUpdate()

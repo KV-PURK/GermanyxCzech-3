@@ -28,12 +28,14 @@ public class EnemyStateMachine : MonoBehaviour
 
     private void Update()
     {
-        currentState.OnUpdate();
+        if (!PauseManager.Singleton.IsPaused)
+            currentState.OnUpdate();
     }
 
     private void FixedUpdate()
     {
-        currentState.OnFixedUpdate();
+        if (!PauseManager.Singleton.IsPaused)
+            currentState.OnFixedUpdate();
     }
 
     public void SwitchToState(BaseEnemyState state)
@@ -46,6 +48,8 @@ public class EnemyStateMachine : MonoBehaviour
 
     public void LookAtPlayer()
     {
+        if (player == null) return;
+
         Vector2 diff = player.position - transform.position;
 
         float angle = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
