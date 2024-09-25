@@ -440,6 +440,7 @@ MonoBehaviour:
   upgradeNameText: {fileID: 2643413339732671516}
   upgradeDescriptionText: {fileID: 2530017273773823038}
   upgradeIcon: {fileID: 1808809328628496514}
+  rareUpgradeColor: {r: 0.9780209, g: 1, b: 0, a: 1}
 --- !u!1 &7057158417891110474
 GameObject:
   m_ObjectHideFlags: 0

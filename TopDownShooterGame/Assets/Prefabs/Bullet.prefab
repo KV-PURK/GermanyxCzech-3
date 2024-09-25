@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.007, y: 1.213, z: 0}
-  m_LocalScale: {x: 0.3693, y: 0.3693, z: 0.3693}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -128,9 +128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyEffect: {fileID: 5797493601827209050, guid: 998d17cd865a8ec4f8209b523693ce5c, type: 3}
-  speed: 20
-  damage: 15
-  maxBounces: 2
+  speed: 15
+  damage: 10
+  maxBounces: 1
 --- !u!58 &5753160730963699418
 CircleCollider2D:
   m_ObjectHideFlags: 0

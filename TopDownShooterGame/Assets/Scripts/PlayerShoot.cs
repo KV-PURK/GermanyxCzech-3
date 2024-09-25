@@ -32,6 +32,9 @@ public class PlayerShoot : MonoBehaviour
         Bullet bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation).GetComponent<Bullet>();
         bullet.maxBounces = PlayerStats.Singleton.bulletBounces;
         bullet.damage = PlayerStats.Singleton.bulletDamage;
+        bullet.speed = PlayerStats.Singleton.bulletSpeed;
+
+        bullet.transform.localScale = 0.4f * PlayerStats.Singleton.bulletScale * Vector3.one;
 
 
         sinceShot = 0.0f;

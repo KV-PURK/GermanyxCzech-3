@@ -9,6 +9,7 @@ public class UpgradeSelect : MonoBehaviour
     [SerializeField] private TextMeshProUGUI upgradeNameText;
     [SerializeField] private TextMeshProUGUI upgradeDescriptionText;
     [SerializeField] private Image upgradeIcon;
+    [SerializeField] private Color rareUpgradeColor;
 
     private PlayerUpgrade playerUpgrade;
 
@@ -18,6 +19,10 @@ public class UpgradeSelect : MonoBehaviour
         upgradeNameText.text = upgrade.upgradeName;
         upgradeDescriptionText.text = upgrade.upgradeDescription;
         upgradeIcon.sprite = upgrade.upgradeIcon;
+        if (upgrade.isRare)
+        {
+            upgradeIcon.color = rareUpgradeColor;
+        }
     }
 
     public void OnSelect()

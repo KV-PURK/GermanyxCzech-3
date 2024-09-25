@@ -37,9 +37,9 @@ public class UpgradeManager : MonoBehaviour
 
     }
 
-    public void TriggerUpgradeSelection(int upgradeCount)
+    public void TriggerUpgradeSelection(int upgradeCount, bool includeRare)
     {
-        List<PlayerUpgrade> randomUpgrades = GetRandomUpgrades(upgradeCount);
+        List<PlayerUpgrade> randomUpgrades = GetRandomUpgrades(upgradeCount, includeRare);
 
         foreach (PlayerUpgrade upgrade in randomUpgrades)
         {
@@ -63,7 +63,7 @@ public class UpgradeManager : MonoBehaviour
         UIManager.Singleton.HideUpgradeSelectUI();
     }
 
-    private List<PlayerUpgrade> GetRandomUpgrades(int amount)
+    private List<PlayerUpgrade> GetRandomUpgrades(int amount, bool includeRare)
     {
         if (amount > upgrades.Count) amount = upgrades.Count; // So we don't accidentally end up in an infinte loop
 
@@ -72,7 +72,7 @@ public class UpgradeManager : MonoBehaviour
         {
             PlayerUpgrade upgrade = upgrades[Random.Range(0, upgrades.Count)];
 
-            if (randoms.Contains(upgrade))
+            if (randoms.Contains(upgrade) || (!includeRare && upgrade.isRare))
             {
                 i--;
                 continue;
