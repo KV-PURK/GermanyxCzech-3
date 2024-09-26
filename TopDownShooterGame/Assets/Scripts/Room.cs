@@ -90,7 +90,7 @@ public class Room : MonoBehaviour
 
         if (toggle)
         {
-            CameraShake.Singleton.ShakeCamera(0.5f, 2.0f);
+            CameraShake.Singleton.ShakeCamera(0.5f, 4.0f);
         }
     }
 }

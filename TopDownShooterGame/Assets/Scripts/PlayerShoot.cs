@@ -38,11 +38,10 @@ public class PlayerShoot : MonoBehaviour
         {
             int shots = ConvertMultishot();
             StartCoroutine(PerformMultishot(shots));
+            sinceShot = 0.0f;
         }
 
-        sinceShot = 0.0f;
-
-        CameraShake.Singleton.ShakeCamera(0.15f, 1.5f);
+        CameraShake.Singleton.ShakeCamera(0.15f, 2.5f);
     }
 
     IEnumerator PerformMultishot(int shots)

@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 663aa69806395954fb37a5b5fe94421e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
+  health: 90
+  maxHealth: 90
   killEffect: {fileID: 1895864274736001161, guid: 1fab32be5f47e8a469c911d1bb4d3e37, type: 3}
   damagedEvent:
     m_PersistentCalls:
@@ -214,8 +214,10 @@ MonoBehaviour:
   possibleDrops:
   - chance: 35
     dropPrefab: {fileID: 715074940241388458, guid: 42474d6119c368c4692cfb938e8d38de, type: 3}
-  - chance: 15
+  - chance: 20
     dropPrefab: {fileID: 5484413741659618746, guid: 5cc5926b05e8ec74f830a4fe120b936b, type: 3}
+  - chance: 8
+    dropPrefab: {fileID: 7809032865679845857, guid: 82f9f18aafa2f5c4c81c833496b47f05, type: 3}
   dropRange: 0.2
 --- !u!1 &4105400923244712073
 GameObject:
