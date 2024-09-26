@@ -13,8 +13,8 @@ public class Health : MonoBehaviour
     [SerializeField] private GameObject killEffect;
 
     [Header("Events")]
-    [SerializeField] private UnityEvent<int, int, int> damagedEvent;
-    [SerializeField] private UnityEvent deathEvent;
+    public UnityEvent<int, int, int> damagedEvent;
+    public UnityEvent deathEvent;
 
     public void Damage(int amount)
     {

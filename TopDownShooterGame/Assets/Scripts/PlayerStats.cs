@@ -30,6 +30,7 @@ public class PlayerStats : MonoBehaviour
     public float shootDelay = 0.75f;
     public float bulletScale = 1.0f;
     public float bulletSpeed = 10.0f;
+    public float multishot = 0.0f;
 
     private void Awake()
     {

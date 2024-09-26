@@ -19,6 +19,7 @@ public class PlayerUpgrade : ScriptableObject
     public float shootDelay;
     public float bulletScale;
     public float bulletSpeed;
+    public float multishotGain;
 
     public void ApplyUpgrade()
     {
@@ -28,6 +29,7 @@ public class PlayerUpgrade : ScriptableObject
         PlayerStats.Singleton.shootDelay += shootDelay;
         PlayerStats.Singleton.bulletScale += bulletScale;
         PlayerStats.Singleton.bulletSpeed += bulletSpeed;
+        PlayerStats.Singleton.multishot += multishotGain;
 
         if (shootDelay < 0.1f)
         {
