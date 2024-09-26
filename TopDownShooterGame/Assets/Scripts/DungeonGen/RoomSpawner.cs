@@ -44,12 +44,6 @@ public class RoomSpawner : MonoBehaviour {
 				Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
 			}
 			spawned = true;
-		
-		if (openingDirection == 1 && openingDirection == 3)
-			{
-
-			}
-		
 		}
 	}
 

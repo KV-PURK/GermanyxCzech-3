@@ -123,6 +123,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &73684302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73684303}
+  - component: {fileID: 73684304}
+  m_Layer: 0
+  m_Name: RoomManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73684303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73684302}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1921845131}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &73684304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73684302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab9da4fee1da9c44d86a7face908bff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomVariations:
+  - {fileID: 8394270193292929780, guid: 36d76887d1acd86438a9bea87fc7638d, type: 3}
+  - {fileID: 3386755308816594623, guid: fe7e3eb505f0a37449dc4f325f8ec58d, type: 3}
+  - {fileID: 7249472317612974354, guid: 3d15733ac0574d54b8e9a19e7495fd31, type: 3}
+  - {fileID: 4409775526465960909, guid: 962a6657240f19f4cbf87e955319966b, type: 3}
+  - {fileID: 9189142215057797545, guid: 2d8a9ab90d1b5c2429537238d8e96331, type: 3}
 --- !u!1 &120233420
 GameObject:
   m_ObjectHideFlags: 0
@@ -6040,6 +6090,7 @@ Transform:
   - {fileID: 1017273016}
   - {fileID: 1062385561}
   - {fileID: 1146314296}
+  - {fileID: 73684303}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1927727302

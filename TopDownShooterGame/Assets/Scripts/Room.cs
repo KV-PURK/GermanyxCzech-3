@@ -14,6 +14,8 @@ public class Room : MonoBehaviour
 
     private List<GameObject> enemies;
 
+    private bool spawned = false;
+
     private void Awake()
     {
         enemies = new List<GameObject>();
@@ -22,10 +24,11 @@ public class Room : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !spawned)
         {
             OnPlayerEnterRoom();
             playerEnterRoomEvent?.Invoke();
+            spawned = true;
         }
         if (collision.CompareTag("Enemy") && !enemies.Contains(collision.gameObject))
         {
