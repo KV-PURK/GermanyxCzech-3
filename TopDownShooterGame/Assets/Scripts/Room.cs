@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Room : MonoBehaviour
 {
     [SerializeField] private Transform enemySpawnsHolder;
-    [SerializeField] private List<GameObject> doors;
+    private List<GameObject> doors;
 
     private int enemyCount = 0;
 
@@ -16,10 +16,12 @@ public class Room : MonoBehaviour
 
     private bool spawned = false;
 
-    private void Awake()
+    private void Start()
     {
+        doors = new List<GameObject>();
         enemies = new List<GameObject>();
         enemyCount = 0;
+        InitDoors();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,6 +45,15 @@ public class Room : MonoBehaviour
         }
     }
 
+    private void InitDoors()
+    {
+        foreach (Transform t in transform.root.Find("Doors"))
+        {
+            doors.Add(t.gameObject);
+        }
+    }
+
+
     public void OnEnemyDeath()
     {
         enemyCount--;
@@ -54,6 +65,7 @@ public class Room : MonoBehaviour
 
     private void OnPlayerEnterRoom()
     {
+        bool spawned = false;
         foreach (Transform spawn in enemySpawnsHolder)
         {
             EnemySpawnpoint enemySpawn = spawn.GetComponent<EnemySpawnpoint>();
@@ -61,17 +73,24 @@ public class Room : MonoBehaviour
             if (enemySpawn != null)
             {
                 enemySpawn.StartSpawning();
+                spawned = true;
             }
         }
-
-        ToggleDoors(true);
+        if (spawned)
+            ToggleDoors(true);
     }
 
     private void ToggleDoors(bool toggle)
     {
+        doors[0].transform.parent.gameObject.SetActive(toggle);
         foreach (GameObject door in doors)
         {
             door.SetActive(toggle);
+        }
+
+        if (toggle)
+        {
+            CameraShake.Singleton.ShakeCamera(0.5f, 2.0f);
         }
     }
 }

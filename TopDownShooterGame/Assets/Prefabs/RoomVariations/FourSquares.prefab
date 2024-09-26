@@ -770,7 +770,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawnsHolder: {fileID: 68972222035308549}
-  doors: []
 --- !u!61 &2103858736022762626
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -814,7 +813,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 35, y: 20}
+  m_Size: {x: 30, y: 17.5}
   m_EdgeRadius: 0
 --- !u!1 &3628239534341360138
 GameObject:

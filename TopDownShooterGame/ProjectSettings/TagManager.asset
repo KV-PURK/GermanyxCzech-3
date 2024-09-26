@@ -47,6 +47,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: LowAf
+    uniqueID: 4294696553
+    locked: 0
+  - name: Low
+    uniqueID: 2509373731
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

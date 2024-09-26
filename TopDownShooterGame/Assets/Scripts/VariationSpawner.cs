@@ -6,6 +6,7 @@ public class VariationSpawner : MonoBehaviour
 {
     void Start()
     {
-        Instantiate(RoomManager.Singleton.GetRandomRoomVariation(), transform.position, Quaternion.identity);
+        Transform killmePls = Instantiate(RoomManager.Singleton.GetRandomRoomVariation(), transform.position, Quaternion.identity).transform;
+        killmePls.SetParent(transform);
     }
 }
