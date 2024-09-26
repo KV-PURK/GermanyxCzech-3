@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyEffect: {fileID: 5797493601827209050, guid: 998d17cd865a8ec4f8209b523693ce5c, type: 3}
   speed: 15
-  damage: 10
+  damage: 15
   maxBounces: 1
 --- !u!58 &5753160730963699418
 CircleCollider2D:

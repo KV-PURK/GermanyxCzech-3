@@ -32,6 +32,8 @@ public class Health : MonoBehaviour
     {
         health += amount;
 
+        damagedEvent?.Invoke(-amount, health, maxHealth);
+
         if (health > maxHealth)
         {
             health = maxHealth;
