@@ -12,8 +12,11 @@ public class Room : MonoBehaviour
 
     private UnityEvent playerEnterRoomEvent;
 
+    private List<GameObject> enemies;
+
     private void Awake()
     {
+        enemies = new List<GameObject>();
         enemyCount = 0;
     }
 
@@ -24,8 +27,9 @@ public class Room : MonoBehaviour
             OnPlayerEnterRoom();
             playerEnterRoomEvent?.Invoke();
         }
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && !enemies.Contains(collision.gameObject))
         {
+            enemies.Add(collision.gameObject);
             enemyCount++;
 
             Health health = collision.GetComponent<Health>();
