@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HeavyCaliber
   m_EditorClassIdentifier: 
   upgradeName: Heavy Caliber
-  upgradeDescription: +5 Bullet damage, +20% Bullet Size, -1 Bullet Speed
+  upgradeDescription: +5 Arrow damage, +20% Arrow Size, -1 Arrow Speed
   upgradeIcon: {fileID: 21300000, guid: 82c16e7607740e442b63970d708df909, type: 3}
   isRare: 1
   bulletDamage: 5

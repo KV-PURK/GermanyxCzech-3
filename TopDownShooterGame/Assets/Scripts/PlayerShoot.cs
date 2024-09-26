@@ -39,6 +39,6 @@ public class PlayerShoot : MonoBehaviour
 
         sinceShot = 0.0f;
 
-        CameraShake.Singleton.ShakeCamera(0.15f, 1f);
+        CameraShake.Singleton.ShakeCamera(0.15f, 1.5f);
     }
 }

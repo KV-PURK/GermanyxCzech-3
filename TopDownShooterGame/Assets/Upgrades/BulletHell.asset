@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a261c9556a6aff4689114492026c6d1, type: 3}
   m_Name: BulletHell
   m_EditorClassIdentifier: 
-  upgradeName: Bullet Hell
-  upgradeDescription: +1 Bullet Speed and -0.1 seconds shooting cooldown
+  upgradeName: Arrow Hell
+  upgradeDescription: +1 Arrow Speed and -0.1 seconds shooting cooldown
   upgradeIcon: {fileID: 21300000, guid: 82c16e7607740e442b63970d708df909, type: 3}
   isRare: 1
   bulletDamage: 0
   bulletBounces: 0
   movementSpeed: 0
-  shootDelay: -0.1
+  shootDelay: 0.1
   bulletScale: 0
   bulletSpeed: 1
