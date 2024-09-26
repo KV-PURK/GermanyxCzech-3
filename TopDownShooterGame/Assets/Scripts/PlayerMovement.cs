@@ -23,5 +23,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 movementDirection = inputDirection * PlayerStats.Singleton.movementSpeed;
         rb.MovePosition(rb.position + movementDirection * Time.fixedDeltaTime);
+       
     }
 }
