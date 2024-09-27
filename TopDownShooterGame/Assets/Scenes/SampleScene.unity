@@ -4383,7 +4383,7 @@ MonoBehaviour:
   shootDelay: 1
   bulletScale: 1
   bulletSpeed: 10
-  multishot: 5
+  multishot: 0
 --- !u!1 &1036154740
 GameObject:
   m_ObjectHideFlags: 0
