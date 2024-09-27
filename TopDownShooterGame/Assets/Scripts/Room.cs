@@ -11,6 +11,7 @@ public class Room : MonoBehaviour
     private int enemyCount = 0;
 
     private UnityEvent playerEnterRoomEvent;
+    public UnityEvent<Room> onRoomCleared;
 
     private List<GameObject> enemies;
 
@@ -21,6 +22,8 @@ public class Room : MonoBehaviour
         doors = new List<GameObject>();
         enemies = new List<GameObject>();
         enemyCount = 0;
+
+        RoomManager.Singleton.OnRoomSpawn(this);
         InitDoors();
     }
 
@@ -59,6 +62,7 @@ public class Room : MonoBehaviour
         enemyCount--;
         if (enemyCount <= 0)
         {
+            onRoomCleared?.Invoke(this);
             ToggleDoors(false);
         }
     }

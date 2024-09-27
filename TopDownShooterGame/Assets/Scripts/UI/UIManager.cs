@@ -37,6 +37,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Game Over")]
     [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private GameObject clearedMenu;
 
     private void Awake()
     {
@@ -64,6 +65,19 @@ public class UIManager : MonoBehaviour
         if (!PauseManager.Singleton.IsPaused)
             PauseManager.Singleton.ToggleGamePause();
         gameOverMenu.SetActive(true);
+    }
+
+    public void DungeonCleared()
+    {
+        StartCoroutine(ShowDungeonClearedUI(3.0f));
+    }
+
+    IEnumerator ShowDungeonClearedUI(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (!PauseManager.Singleton.IsPaused)
+            PauseManager.Singleton.ToggleGamePause();
+        clearedMenu.SetActive(true);
     }
 
     public void SpawnUpgradeUI(PlayerUpgrade playerUpgrade)
